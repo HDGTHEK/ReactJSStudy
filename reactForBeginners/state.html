@@ -12,13 +12,12 @@
     //   counter = counter + 1;
     //   render(); //이처럼 리렌더링 해줘야 UI가 새로고침 된다! Not a good way!!!
     // } useState로 한방에 만들 수 있다
-    function render() {
-      ReactDOM.render(<App />, root);
-    }
+
     function App() {
-      const [counter, setCounter] = React.useState(0); //data값과 data를 변경하는 함수로 이루어진 배열
+      const [counter, setCounter] = React.useState(0); //data값과 data를 변경&리렌더링 하는 함수로 이루어진 배열
       const onClick = () => {
-        setCounter(counter + 1); //리렌더링까지 해주는 함수!
+        //setCounter(counter + 1);
+        setCounter((current) => current + 1); //더 안전한 방법 current가 확실하니까!
       };
       return (
         <div>
@@ -27,7 +26,7 @@
         </div>
       );
     }
-    render(); //렌더링할때 counter는 0로 시작
+    ReactDOM.render(<App />, root); //렌더링할때 counter는 0로 시작
     //React.js는 vanilaJS와 다르게 바뀐 UI부분만 업데이트해주면 된다! 새로운 컴포넌트 create 하는게 X
   </script>
 </html>
