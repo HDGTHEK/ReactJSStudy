@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
-/*
+
 function Hello() {
-  function byeFn() {
-    console.log("bye ;(");
-  }
-  function hiFn() {
+  useEffect(() => {
     console.log("hi :)");
-    return byeFn;
-  }
-  useEffect(hiFn, []);
+    return function () {
+      console.log("bye ;(");
+    };
+  }, []);
+
   return <h1>Hello</h1>;
 }
-*/
-/*
+
 function App() {
   const [showing, setShowing] = useState(false);
   const onClick = () => setShowing((prev) => !prev);
@@ -22,9 +20,9 @@ function App() {
       <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
     </div>
   );
-  }
-  */
+}
 
+/*
 function App() {
   const [counter, setValue] = useState(0);
   const [keyword, setKeyword] = useState("");
@@ -63,5 +61,5 @@ function App() {
     </div>
   );
 }
-
+*/
 export default App; // 내보내기
