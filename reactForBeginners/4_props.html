@@ -5,9 +5,10 @@
   </body>
   <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    function Btn({ text, changeValue }) {
+    function Btn({ text, changeValue, fontSize = 16 }) {
       //shortcut, OBJECT안의 인자를 {}를 통해 가져옴
       return (
         <button
@@ -18,6 +19,7 @@
             padding: "10px 20px",
             border: 0,
             borderRadius: 10,
+            fontSize,
           }}
         >
           {text}
@@ -25,6 +27,12 @@
       );
     }
     const MemorizedBtn = React.memo(Btn); // 변화있는 props만 리랜더링 가능
+    Btn.propTypes = {
+      //MemorizeBtn이 맞냐 Btn이 맞냐
+      //props type이 올바른지 경고를 줄 수 있다!
+      text: PropTypes.string.isRequired, //.isRequired 넣으면 필수로 있어야하는 값 설정가능
+      fontSize: PropTypes.number,
+    };
     function App() {
       const [value, setValue] = React.useState("Save Changes");
       const changeValue = () => setValue("Revert Changes");
@@ -33,6 +41,7 @@
           <MemorizedBtn
             text={value}
             changeValue={changeValue} // props일 뿐, 이벤트 리스너 아니다! 직접 설정해야함
+            fontSize={18}
           />
           <MemorizedBtn text="Continue" />
         </div>
