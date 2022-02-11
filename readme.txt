@@ -1,3 +1,3 @@
 //file: readme.txt
 
-벨로퍼드 책으로 공부한 react와 NOMADCODER 클론코딩과 병행함
+노마드코더클론코딩 영화앱 만들기 전 공부
