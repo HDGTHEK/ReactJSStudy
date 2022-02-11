@@ -34,7 +34,7 @@
           <div>
             <label htmlFor="hours">Hours</label>
             <input
-              value={inverted ? amount : Math.round(amount / 60)} //if문의 인라인형태 ->
+              value={inverted ? amount : amount / 60}
               id="hours"
               placeholder="Hours"
               type="number"
@@ -76,7 +76,7 @@
           <div>
             <label htmlFor="Miles">Miles</label>
             <input
-              value={inverted ? amount : amount / 1.609}
+              value={inverted ? amount : Math.round(amount / 1.609)}
               id="Miles"
               placeholder="Miles"
               type="number"
