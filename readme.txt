@@ -1,3 +1,3 @@
 //file: readme.txt
 
-movie_app
+coin tracker
