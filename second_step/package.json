@@ -40,5 +40,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://HDGTHEK.github.io/ReactJSStudy"
+  "homepage": "https://HDGTHEK.github.io/ReactJSStudy",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
