@@ -7,6 +7,7 @@ function Detail() {
   const [details, setDetails] = useState([]);
 
   const { id } = useParams();
+
   const getMovie = async () => {
     const json = await (
       await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
@@ -26,7 +27,6 @@ function Detail() {
           {details.map((detail) => (
             <MovieDetail
               key={detail.id}
-              id={detail.id}
               coverImg={detail.medium_cover_image}
               title={detail.title}
               summary={detail.summary}

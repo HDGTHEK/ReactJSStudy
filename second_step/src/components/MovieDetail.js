@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function MovieDetail({
-  id,
   coverImg,
   title,
   summary,
@@ -16,6 +15,7 @@ function MovieDetail({
   return (
     <div>
       <img src={coverImg} alt={title} />
+      <h2>{title}</h2>
       <p>{summary}</p>
       <ul>{genres && genres.map((g) => <li key={g}>{g}</li>)}</ul>
       <li>{year}</li>
@@ -24,7 +24,7 @@ function MovieDetail({
       <li>{download_count}</li>
       <li>{like_count}</li>
       <h2>
-        <Link to={`/`}>{title}</Link>
+        <Link to={`/`}>Main</Link>
       </h2>
     </div>
   );
