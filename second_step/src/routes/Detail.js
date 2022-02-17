@@ -4,7 +4,7 @@ import MovieDetail from "../components/MovieDetail";
 
 function Detail() {
   const [loading, setLoading] = useState(true);
-  const [details, setDetails] = useState([]);
+  const [detail, setDetails] = useState([]);
 
   const { id } = useParams();
 
@@ -24,20 +24,19 @@ function Detail() {
         <h1>Loading...</h1>
       ) : (
         <div>
-          {details.map((detail) => (
-            <MovieDetail
-              key={detail.id}
-              coverImg={detail.medium_cover_image}
-              title={detail.title}
-              summary={detail.summary}
-              genres={detail.genres}
-              year={detail.year}
-              runtime={detail.runtime}
-              discription_intro={detail.discription_intro}
-              download_count={detail.download_count}
-              like_count={detail.like_count}
-            />
-          ))}
+          <MovieDetail
+            key={detail.id}
+            coverImg={detail.medium_cover_image}
+            title={detail.title}
+            summary={detail.summary}
+            genres={detail.genres}
+            year={detail.year}
+            runtime={detail.runtime}
+            discription_intro={detail.discription_intro}
+            download_count={detail.download_count}
+            like_count={detail.like_count}
+          />
+          )
         </div>
       )}
     </div>

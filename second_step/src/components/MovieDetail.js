@@ -16,13 +16,16 @@ function MovieDetail({
     <div>
       <img src={coverImg} alt={title} />
       <h2>{title}</h2>
-      <p>{summary}</p>
-      <ul>{genres && genres.map((g) => <li key={g}>{g}</li>)}</ul>
-      <li>{year}</li>
-      <li>{runtime}</li>
-      <p>{discription_intro}</p>
-      <li>{download_count}</li>
-      <li>{like_count}</li>
+      <p>요약: {summary}</p>
+      <ul>
+        <h3>장르</h3>
+        {genres && genres.map((g) => <li key={g}>{g}</li>)}
+      </ul>
+      <li>출시연도: {year}</li>
+      <li>런타임: {runtime}</li>
+      <p>설명: {discription_intro}</p>
+      <li>다운로드 수: {download_count}</li>
+      <li>좋아요 수: {like_count}</li>
       <h2>
         <Link to={`/`}>Main</Link>
       </h2>
