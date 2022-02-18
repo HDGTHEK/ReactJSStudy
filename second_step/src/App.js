@@ -3,14 +3,13 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [coins, setCoins] = useState([]);
   const [coinCost, setcoinCost] = useState(1);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(0);
   const [coinSymbol, setCoinSymbol] = useState("");
   const onChange = (event) => {
-    setcoinCost(event.target.value);
-    console.log(event.target.value);
+    const [price, symbol] = event.target.value.split(",");
+    setCoinSymbol(symbol);
+    setcoinCost(price);
     setInput(1);
-    setCoinSymbol(event.target.symbol);
-    console.log(event.target.symbol);
   };
   const handleInput = (event) => {
     setInput(event.target.value);
@@ -34,11 +33,7 @@ function App() {
         <select onChange={onChange}>
           <option>What coin do you want to buy?</option>
           {coins.map((coin, index) => (
-            <option
-              key={index}
-              value={coin.quotes.USD.price}
-              symbol={coin.symbol}
-            >
+            <option key={index} value={[coin.quotes.USD.price, coin.symbol]}>
               {coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
             </option>
           ))}
