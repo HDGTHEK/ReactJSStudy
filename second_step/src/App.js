@@ -7,8 +7,10 @@ function App() {
   const [coinSymbol, setCoinSymbol] = useState("");
   const onChange = (event) => {
     setcoinCost(event.target.value);
+    console.log(event.target.value);
     setInput(1);
     setCoinSymbol(event.target.symbol);
+    console.log(event.target.symbol);
   };
   const handleInput = (event) => {
     setInput(event.target.value);
