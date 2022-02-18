@@ -52,7 +52,7 @@ function App() {
         $
       </div>
       <h2>
-        You will get {input / coinCost} {` ${coinSymbol}`}
+        You will get {input / coinCost} {` ${coinSymbol}`}!
       </h2>
     </div>
   );
