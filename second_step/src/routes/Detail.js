@@ -28,11 +28,10 @@ function Detail() {
             key={detail.id}
             coverImg={detail.medium_cover_image}
             title={detail.title}
-            summary={detail.summary}
             genres={detail.genres}
             year={detail.year}
             runtime={detail.runtime}
-            discription_intro={detail.discription_intro}
+            description_intro={detail.description_intro}
             download_count={detail.download_count}
             like_count={detail.like_count}
           />
