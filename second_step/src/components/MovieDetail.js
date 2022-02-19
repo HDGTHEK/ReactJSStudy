@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import styles from "./MovieDetail.module.css";
 
 function MovieDetail({
@@ -25,9 +24,7 @@ function MovieDetail({
       <ol className={styles.movie__list}>다운로드 수: {download_count}회</ol>
       <ol className={styles.movie__list}>좋아요 수: {like_count}</ol>
       <p className={styles.movie__description}>설명: {description_intro}</p>
-      <h2 className={styles.go_to_main}>
-        <Link to={`/`}>Main</Link>
-      </h2>
+      <h2 className={styles.go_to_main}></h2>
     </div>
   );
 }
