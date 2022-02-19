@@ -5,7 +5,7 @@ import Detail from "./routes/Detail";
 function App() {
   return (
     <Routes>
-      <Route path={`/`} exact element={<Home />} />
+      <Route path={`${process.env.PUBLIC_URL}/`} exact element={<Home />} />
       <Route path="/movie/:id" exact element={<Detail />} />
     </Routes>
   );
